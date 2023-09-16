@@ -1,3 +1,7 @@
 Test
     Major: Test
     Interests: Test
+
+Pranav Nadimpalli
+    Major: Electrical Engineering
+    Interests: Robotics
