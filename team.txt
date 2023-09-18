@@ -5,3 +5,7 @@ Test
 Pranav Nadimpalli
     Major: Electrical Engineering
     Interests: Robotics
+
+Matthew Zhu
+    Major: Computer Systems Engineering
+    Interests: Robotic hardware/embedded systems
