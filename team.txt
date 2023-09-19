@@ -21,3 +21,7 @@ Ramprakash Sridharan
 Thienban Nguyen
     Major: Computer Science
     Interests: Robotics
+
+Lukas Chiu
+    Major: Computer Science
+    Interests: Robotics, cars, transit
