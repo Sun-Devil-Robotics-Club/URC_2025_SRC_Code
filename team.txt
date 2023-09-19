@@ -13,3 +13,7 @@ Matthew Zhu
 Daniel Mahanpour
     Major: Computer Science
     Interests: high performance computing / autonomy
+
+Thienban Nguyen
+    Major: Computer Science
+    Interests: Robotics
