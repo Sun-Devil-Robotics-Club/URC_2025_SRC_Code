@@ -14,6 +14,10 @@ Daniel Mahanpour
     Major: Computer Science
     Interests: high performance computing / autonomy
 
+Ramprakash Sridharan
+    Major: Robotics and Autonomous Systems, Systems Engineering
+    Interests: MultiRobotSystem, Machine Vision, Deep learning
+
 Thienban Nguyen
     Major: Computer Science
     Interests: Robotics
