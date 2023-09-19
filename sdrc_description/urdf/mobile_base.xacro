@@ -26,7 +26,7 @@
 
     <xacro:macro name="create_wheel_and_joint" params="prefix x y">
         <xacro:wheel_link prefix="${prefix}"/>
-        <joint name="base_${prefix}_wheel" type="continuous">
+        <joint name="base_${prefix}_wheel_joint" type="continuous">
             <parent link="base_link"/>
             <child link="${prefix}_wheel_link"/>
             <origin xyz="${x} ${y} 0" rpy="0 0 0"/>
