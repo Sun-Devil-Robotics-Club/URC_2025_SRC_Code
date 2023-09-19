@@ -9,3 +9,7 @@ Pranav Nadimpalli
 Matthew Zhu
     Major: Computer Systems Engineering
     Interests: Robotic hardware/embedded systems
+
+Daniel Mahanpour
+    Major: Computer Science
+    Interests: high performance computing / autonomy
