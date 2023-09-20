@@ -11,7 +11,7 @@
     <xacro:property name="wheel_offset_y" value="${base_width / 2.0 + wheel_length / 2.0}" />
     <xacro:property name="base_origin_z" value="${base_height / 2.0}" />
  
-    <xacro:property name="chasis_weight_kgs" value="25" />
+    <xacro:property name="chasis_weight_kgs" value="5" />
     <xacro:property name="wheel_weight_kgs" value="2" />
 
     <!-- LiDar -->
