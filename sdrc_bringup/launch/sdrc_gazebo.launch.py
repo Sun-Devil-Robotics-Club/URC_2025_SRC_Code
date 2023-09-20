@@ -10,6 +10,7 @@ def generate_launch_description():
     urdf_path = os.path.join(get_package_share_path("sdrc_description"), "urdf", "my_robot.urdf.xacro")
     gazebo_ros_launch_path = os.path.join(get_package_share_path("gazebo_ros"), "launch", "gazebo.launch.py")
     rviz_config_path = os.path.join(get_package_share_path("sdrc_bringup"), "rviz", "urdf_config.rviz")
+    world_path = os.path.join(get_package_share_path("sdrc_bringup"), "worlds", "nav_world.world")
 
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
@@ -31,7 +32,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         robot_state_publisher_node,
-        IncludeLaunchDescription(PythonLaunchDescriptionSource(gazebo_ros_launch_path)),
+        IncludeLaunchDescription(PythonLaunchDescriptionSource(gazebo_ros_launch_path), launch_arguments={'world': world_path}.items()),
         gazebo_ros_node,
         rviz2_node
     ])
