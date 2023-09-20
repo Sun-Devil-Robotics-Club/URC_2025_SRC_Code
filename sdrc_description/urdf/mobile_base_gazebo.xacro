@@ -7,73 +7,38 @@
 
     <gazebo reference="left_back_wheel_link">
         <material>Gazebo/Grey</material>
+        <mu1 value="0.5"/> 
+        <mu2 value="0.2"/>
     </gazebo>
 
 
     <gazebo reference="right_back_wheel_link">
         <material>Gazebo/Grey</material>
+        <mu1 value="0.5"/> 
+        <mu2 value="0.2"/>
     </gazebo>
 
     <gazebo reference="left_middle_wheel_link">
         <material>Gazebo/Grey</material>
+        <mu1 value="0.5"/> 
+        <mu2 value="0.2"/>
     </gazebo>
 
     <gazebo reference="right_middle_wheel_link">
         <material>Gazebo/Grey</material>
+        <mu1 value="0.5"/> 
+        <mu2 value="0.2"/>
     </gazebo>
 
     <gazebo reference="left_front_wheel_link">
         <material>Gazebo/Grey</material>
+        <mu1 value="0.5"/> 
+        <mu2 value="0.2"/>
     </gazebo>
 
     <gazebo reference="right_front_wheel_link">
         <material>Gazebo/Grey</material>
+        <mu1 value="0.5"/> 
+        <mu2 value="0.2"/>
     </gazebo>
-
-    <!-- <gazebo>
-        <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
-        <commandTopic>cmd_vel</commandTopic>
-        <odometryTopic>odom</odometryTopic>
-        <odometryFrame>odom</odometryFrame>
-        <odometryRate>20.0</odometryRate>
-        <robotBaseFrame>base_footprint</robotBaseFrame>
-        </plugin>
-    </gazebo> -->
-    
-    <gazebo>
-        <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
-            <!-- Update rate in Hz -->
-            <update_rate>50</update_rate>
-            <!-- wheels -->
-            <!-- Number of wheel pairs -->
-            <num_wheel_pairs>3</num_wheel_pairs>
-
-            <!-- wheels0 -->
-            <left_joint>base_left_front_wheel_joint</left_joint>
-            <right_joint>base_right_front_wheel_joint</right_joint>
-
-            <!-- wheels1-->
-            <left_joint>base_left_back_wheel_joint</left_joint>
-            <right_joint>base_right_back_wheel_joint</right_joint>
-
-            <left_joint>base_left_middle_wheel_joint</left_joint>
-            <right_joint>base_right_middle_wheel_joint</right_joint>
-            <!-- kinematics -->
-            <wheel_separation>${wheel_length}+${base_width}</wheel_separation>
-            <wheel_separation>${wheel_length}+${base_width}</wheel_separation>
-            <wheel_separation>${wheel_length}+${base_width}</wheel_separation>
-
-            <wheel_diameter>${wheel_radius} * 2</wheel_diameter>
-            <wheel_diameter>${wheel_radius} * 2</wheel_diameter>
-            <wheel_diameter>${wheel_radius} * 2</wheel_diameter>
-            <!-- output -->
-            <publish_odom>true</publish_odom>
-            <publish_odom_tf>true</publish_odom_tf>
-            <publish_wheel_tf>true</publish_wheel_tf>
-            <odometry_topic>odom</odometry_topic>
-            <odometry_frame>odom</odometry_frame>
-            <robot_base_frame>base_footprint</robot_base_frame>
-        </plugin>
-    </gazebo>
-
 </robot>

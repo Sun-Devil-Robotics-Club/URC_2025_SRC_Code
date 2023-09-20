@@ -21,7 +21,8 @@ def generate_launch_description():
     gazebo_ros_node = Node(
         package="gazebo_ros", 
         executable="spawn_entity.py",
-        arguments=["-topic", "robot_description", "-entity", "my_robot"]
+        arguments=["-topic", "robot_description", "-entity", "my_robot"], 
+        output="screen"
     )
 
     rviz2_node = Node(
@@ -30,9 +31,23 @@ def generate_launch_description():
         arguments=['-d', rviz_config_path]
     )
 
+    diff_drive_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["diff_cont"],
+    )
+
+    joint_broad_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_broad"],
+    )
+
     return LaunchDescription([
         robot_state_publisher_node,
         IncludeLaunchDescription(PythonLaunchDescriptionSource(gazebo_ros_launch_path), launch_arguments={'world': world_path}.items()),
         gazebo_ros_node,
-        rviz2_node
+        rviz2_node, 
+        diff_drive_spawner,
+        joint_broad_spawner
     ])
