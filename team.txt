@@ -21,3 +21,9 @@ Ramprakash Sridharan
 Thienban Nguyen
     Major: Computer Science
     Interests: Robotics
+
+Jonathan Diamantopoulos
+    Major: Computer Science
+    Interests: Programming, classic rock music
+	
+    
