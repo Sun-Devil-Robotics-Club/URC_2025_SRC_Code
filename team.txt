@@ -25,5 +25,7 @@ Thienban Nguyen
 Jonathan Diamantopoulos
     Major: Computer Science
     Interests: Programming, classic rock music
-	
     
+Nathan Xie
+    Major: Computer Science
+    Interests: Robotics
