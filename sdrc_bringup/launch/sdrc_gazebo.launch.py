@@ -15,12 +15,18 @@ def generate_launch_description():
     gazebo_ros_launch_path = os.path.join(get_package_share_path("gazebo_ros"), "launch", "gazebo.launch.py")
     rviz_config_path = os.path.join(get_package_share_path("sdrc_bringup"), "rviz", "urdf_config.rviz")
     world_path = os.path.join(get_package_share_path("sdrc_bringup"), "worlds", "nav_world.world")
+    gazebo_params_file = os.path.join(get_package_share_path("sdrc_bringup"), "config", "gazebo_params.yaml")
 
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
         parameters=[{'robot_description': Command(["xacro ", urdf_path, " use_ros2_control:=", use_ros2_control]),
                     'use_sim_time': use_sim_time}]
+    )
+
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(gazebo_ros_launch_path), 
+        launch_arguments={'world': world_path, 'extra_gazebo_args': '--ros-args --params-file ' + gazebo_params_file}.items()
     )
 
     gazebo_ros_node = Node(
@@ -60,7 +66,7 @@ def generate_launch_description():
             description="use ros2 control if true"
         ),
         robot_state_publisher_node,
-        IncludeLaunchDescription(PythonLaunchDescriptionSource(gazebo_ros_launch_path), launch_arguments={'world': world_path}.items()),
+        gazebo,
         gazebo_ros_node,
         rviz2_node, 
         diff_drive_spawner,
