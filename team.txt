@@ -29,3 +29,8 @@ Jonathan Diamantopoulos
 Nathan Xie
     Major: Computer Science
     Interests: Robotics
+
+Shashwat Raj
+    Major: Computer Systems Engineering
+    Interests: Robotics, Machine Learning, Embedded systems 
+    and autonomous control system
