@@ -2,6 +2,21 @@
 
 Source Code for the Rover Competing in University Rover Challenge 2025
 
+## Stuff To Install 
+
+1. Slam Tool Box    
+
+```
+sudo apt install ros-humble-slam-toolbox
+```  
+
+2. Joystick/remote control  
+
+```
+sudo apt install joystick jstest-gtk evtest
+```   
+
+
 ## How To Collaborate
 
 ### 1. Setup Your ROS 2 Workspace
