@@ -6,39 +6,57 @@
     </gazebo>
 
     <gazebo reference="left_back_wheel_link">
-        <mu1 value="7.0" />
-        <mu2 value="7.0" />
+        <mu1 value="1.0"/>
+        <mu2 value="0.7"/>
+        <kp value="10000000.0" />
+        <kd value="10.0" />
+        <fdir1 value="1 0 0"/>
         <material>Gazebo/Grey</material>
     </gazebo>
 
 
     <gazebo reference="right_back_wheel_link">
-        <mu1 value="7.0" />
-        <mu2 value="7.0" />
+        <mu1 value="1.0"/>
+        <mu2 value="0.7"/>
+        <kp value="10000000.0" />
+        <kd value="10.0" />
+        <fdir1 value="1 0 0"/>
         <material>Gazebo/Grey</material>
     </gazebo>
 
     <gazebo reference="left_middle_wheel_link">
-        <mu1 value="7.0" />
-        <mu2 value="7.0" />
+        <mu1 value="1.0"/>
+        <mu2 value="0.7"/>
+        <kp value="10000000.0" />
+        <kd value="10.0" />
+        <fdir1 value="1 0 0"/>
         <material>Gazebo/Grey</material>
     </gazebo>
 
     <gazebo reference="right_middle_wheel_link">
-        <mu1 value="7.0" />
-        <mu2 value="7.0" />
+        <mu1 value="1.0"/>
+        <mu2 value="0.7"/>
+        <kp value="10000000.0" />
+        <kd value="10.0" />
+        <fdir1 value="1 0 0"/>
         <material>Gazebo/Grey</material>
     </gazebo>
 
     <gazebo reference="left_front_wheel_link">
-        <mu1 value="7.0" />
-        <mu2 value="7.0" />
+        <mu1 value="1.0"/>
+        <mu2 value="0.7"/>
+        <kp value="10000000.0" />
+        <kd value="10.0" />
+        <fdir1 value="1 0 0"/>
         <material>Gazebo/Grey</material>
     </gazebo>
 
     <gazebo reference="right_front_wheel_link">
-        <mu1 value="7.0" />
-        <mu2 value="7.0" />
+        <mu1 value="1.0"/>
+        <mu2 value="0.7"/>
+        <kp value="10000000.0" />
+        <kd value="1.0" />
+        <fdir1 value="1 0 0"/>
         <material>Gazebo/Grey</material>
     </gazebo>
 </robot>

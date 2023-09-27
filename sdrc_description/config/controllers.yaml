@@ -20,7 +20,7 @@ diff_cont:
     right_wheel_names: ['base_right_front_wheel_joint', 'base_right_middle_wheel_joint', 'base_right_back_wheel_joint']
     wheel_separation: 0.45
     wheel_radius: 0.1
-
+    wheels_per_side: 1
     use_stamped_vel: false
 
     # open_loop: false    
