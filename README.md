@@ -93,19 +93,17 @@ colcon build
 ### Run Example Simulation
 
 1. Source your workspace  
-```
 
+```
 source ~/<workspace_name>/install/setup.bash
 ```
+2. In a terminal run the following command. This will start the simulation and rviz you should see a world show up with some objects in it and the robot  
 
-2. In a terminal run the following command. This will start the simulation and rviz you should see a world show up with some objects in it and the robot
 ```
-
 ros2 launch sdrc_bringup sdrc_gazebo.launch.py use_ros2_control:=false
 ```
+3. To control the rover run; this should bring up a control pad in the terminal that allow syou to control the rover using u,i,o,j,k,l,m,",",".","/"  
 
-3. To control the rover run; this should bring up a control pad in the terminal that allow syou to control the rover using u,i,o,j,k,l,m,",",".","/"
 ```
-
 ros2 teleop_twist_keyboard teleop_twist_keyboard
 ```
