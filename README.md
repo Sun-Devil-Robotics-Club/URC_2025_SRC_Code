@@ -104,7 +104,7 @@ source ~/<workspace_name>/install/setup.bash
 ros2 launch sdrc_bringup sdrc_gazebo.launch.py use_ros2_control:=false
 ```
 
-3. To control the rover run
+3. To control the rover run; this should bring up a control pad in the terminal that allow syou to control the rover using u,i,o,j,k,l,m,",",".","/"
 ```
 
 ros2 teleop_twist_keyboard teleop_twist_keyboard
