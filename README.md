@@ -25,6 +25,7 @@ sudo apt install ros-humble-robot-state-publisher
 sudo apt install ros-humble-xacro
 sudo apt install ros-humble-rviz2
 sudo apt install ros-humble-gazebo-plugins
+sudo apt install ros-humble-joint-state-publisher-gui
 ```
 
 ## 🤝 How to Collaborate
