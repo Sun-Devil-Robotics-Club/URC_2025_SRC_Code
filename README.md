@@ -1,109 +1,94 @@
 # SDRC_URC2025
 
-Source Code for the Rover Competing in University Rover Challenge 2025
+This repository contains the source code for the rover competing in the University Rover Challenge 2025 by the Sun Devil Robotics Club.
 
-## Stuff To Install 
+## 📦 Prerequisites & Installation
 
-1. Slam Tool Box    
+Before you start, make sure to install the following packages:
 
+### 1. Slam Tool Box
 ```
 sudo apt install ros-humble-slam-toolbox
-```  
+```
 
-2. Joystick/remote control  
-
+### 2. Joystick/Remote Control
 ```
 sudo apt install joystick jstest-gtk evtest
-```   
-
-
-## How To Collaborate
-
-### 1. Setup Your ROS 2 Workspace
-
-1. Create a ROS 2 workspace if you haven't already with a src directory
-
-2. Navigate to the `src` directory and clone the repository:
-
 ```
 
-sudo git clone https://github.com/Sun-Devil-Robotics-Club/URC_2025_SRC_Code.git .
+### 3. Gazebo Dependencies
+```
+sudo apt install ros-humble-gazebo-ros-pkgs
+sudo apt install ros-humble-ros2-control
+sudo apt install ros-humble-controller-manager
+sudo apt install ros-humble-robot-state-publisher
+sudo apt install ros-humble-xacro
+sudo apt install ros-humble-rviz2
+sudo apt install ros-humble-gazebo-plugins
+```
 
+## 🤝 How to Collaborate
+
+### 1. Setup Your ROS 2 Workspace
+- Create a ROS 2 workspace if you haven't already, with a `src` directory.
+- Navigate to the `src` directory and clone the repository:
+```
+sudo git clone https://github.com/Sun-Devil-Robotics-Club/URC_2025_SRC_Code.git .
 ```
 
 ### 2. Create and Work on a New Branch
-
-1. Create a new branch (replace `<branch_name>` with your desired branch name):
-
+- Create a new branch (replace `<branch_name>` with your desired branch name):
 ```
-
 git checkout -b <branch_name>
-
 ```
-
-2. Make and save your changes.
-
-3. Stage your changes:
-
+- Make and save your changes, then stage them:
 ```
-
 git add .
-
 ```
-
-4. Commit your changes (replace `<your_message>` with a meaningful commit message):
-
+- Commit your changes (replace `<your_message>` with a meaningful commit message):
 ```
-
 git commit -m "<your_message>"
-
 ```
-
-5. Push your changes to the repository:
-
+- Push your changes to the repository:
 ```
-
 git push origin <branch_name>
-
 ```
 
 ### 3. Open a Pull Request
+After pushing your changes, go to the GitHub repository and open a pull request. Your changes will be reviewed by the team and, if approved, merged into the main codebase.
 
-After pushing your changes, go to the GitHub repository and open a pull request. This will allow your changes to be reviewed by the team and, if approved, merged into the main codebase.
+## 🛠️ Build Your Environment
 
-## Build your Enviornment  
+Once your ROS 2 workspace is set up, ensure you have a file structure that has `<workspace_name>\src` and that all of the packages in this repository are present in the `src` directory.
 
-Now that your ros2 workspace is already setup you should have a file structure that has `<workspace_name>\src`. In src make sure you have all of the packages in this repository.
-
-1. Go into your ros2 workspace directory. You can do this by running this command in from the root directory  
-
+- Navigate to your ROS 2 workspace directory:
 ```
-
 cd <workspace_name>
-```  
-
-2. Then run colcon build (make sure you are running this from your ros2 workspace not in the src directory)
 ```
-
+- Then run colcon build (ensure this is run from your ROS 2 workspace, not the `src` directory):
+```
 colcon build
 ```
 
-3. If you run into any errors let me know and we will figure it out. You are likely missing some dependencies so make sure you have followed the commands in Part 1 of this read me ## Stuff to install
+If any errors arise, you are likely missing some dependencies, so make sure you have followed the installation commands mentioned above.
 
-### Run Example Simulation
+## 🚀 Run Example Simulation
 
-1. Source your workspace  
-
+1. Source your workspace:
 ```
 source ~/<workspace_name>/install/setup.bash
 ```
-2. In a terminal run the following command. This will start the simulation and rviz you should see a world show up with some objects in it and the robot  
-
+2. Start the simulation and RViz in a terminal. You should see a world populated with objects and the robot:
 ```
 ros2 launch sdrc_bringup sdrc_gazebo.launch.py use_ros2_control:=false
 ```
-3. To control the rover run; this should bring up a control pad in the terminal that allow syou to control the rover using u,i,o,j,k,l,m,",",".","/"  
-
+3. To control the rover, run the following command. This will bring up a control pad in the terminal, allowing you to control the rover using `u,i,o,j,k,l,m,",",".","/":
 ```
 ros2 teleop_twist_keyboard teleop_twist_keyboard
 ```
+
+## ✉️ Contact & Support
+
+If you run into any issues or have questions, feel free to contact the project maintainers or raise an issue on the repository. Your contributions and feedback are highly appreciated.
+
+Happy Coding!
