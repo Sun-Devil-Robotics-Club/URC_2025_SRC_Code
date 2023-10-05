@@ -28,6 +28,14 @@ sudo apt install ros-humble-gazebo-plugins
 sudo apt install ros-humble-joint-state-publisher-gui
 ```
 
+### 4. Zed 2 Dependencies   
+
+## 1. Install ZED SDK for Ubuntu 22.04
+
+## 2. Dependencies  
+```
+rosdep install --from-paths src --ignore-src -r -y
+```
 ## 🤝 How to Collaborate
 
 ### 1. Setup Your ROS 2 Workspace
