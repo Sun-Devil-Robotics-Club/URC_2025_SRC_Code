@@ -26,7 +26,7 @@ def generate_launch_description():
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(gazebo_ros_launch_path), 
-        launch_arguments={'world': world_path, 'extra_gazebo_args': '--ros-args --params-file ' + gazebo_params_file}.items()
+        launch_arguments={ 'world': world_path, 'extra_gazebo_args': '--ros-args --params-file ' + gazebo_params_file}.items()
     )
 
     gazebo_ros_node = Node(
