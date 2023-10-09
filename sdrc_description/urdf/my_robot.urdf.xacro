@@ -18,6 +18,6 @@
     
     <xacro:include filename="lidar.xacro" />
     <xacro:include filename="gps.xacro" />
-    <!-- <xacro:include filename="depth_camera.xacro" /> -->
+    <xacro:include filename="depth_camera.xacro" />
     
 </robot>
