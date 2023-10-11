@@ -20,15 +20,16 @@
             <num_wheel_pairs>3</num_wheel_pairs>
 
             <!-- wheels0 -->
-            <left_joint>base_left_front_wheel_joint</left_joint>
-            <right_joint>base_right_front_wheel_joint</right_joint>
+            <left_joint>left_front_wheel_joint</left_joint>
+            <right_joint>right_front_wheel_joint</right_joint>
 
             <!-- wheels1-->
-            <left_joint>base_left_back_wheel_joint</left_joint>
-            <right_joint>base_right_back_wheel_joint</right_joint>
+            <left_joint>left_rear_wheel_joint</left_joint>
+            <right_joint>right_rear_wheel_joint</right_joint>
 
-            <left_joint>base_left_middle_wheel_joint</left_joint>
-            <right_joint>base_right_middle_wheel_joint</right_joint>
+            <left_joint>left_middle_wheel_joint</left_joint>
+            <right_joint>right_middle_wheel_joint</right_joint>
+            
             <!-- kinematics -->
             <wheel_separation>${wheel_length + base_width}</wheel_separation>
 
