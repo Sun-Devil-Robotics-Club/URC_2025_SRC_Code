@@ -50,13 +50,13 @@ def autocal_stepper(odrv, odrv_ID):
     odrv.config.dc_max_positive_current = 20
     odrv.config.enable_brake_resistor = True
 
-    odrv.axis1.motor.config.pole_pairs = 3
+    odrv.axis1.motor.config.pole_pairs = 15
     odrv.axis1.motor.config.resistance_calib_max_voltage = 2
     odrv.axis1.motor.config.motor_type = 0  # "MOTOR_TYPE_HIGH_CURRENT"
     odrv.axis1.motor.config.current_lim = 15
     odrv.axis1.motor.config.requested_current_range = 20
 
-    odrv.axis1.encoder.config.cpr = 16384
+    odrv.axis1.encoder.config.cpr = 4096
     odrv.axis1.encoder.config.bandwidth = 3000
     odrv.axis1.config.calibration_lockin.current = 5
     odrv.axis1.config.calibration_lockin.ramp_distance = 3.1415
