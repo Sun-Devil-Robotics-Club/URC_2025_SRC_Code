@@ -19,3 +19,10 @@ odrv0.axis0.trap_traj.config.accel_limit = 5
 odrv0.axis0.trap_traj.config.decel_limit = 5
 
 odrv0.axis0.requested_state = AXIS_STATE_MOTOR_CALIBRATION
+
+
+odrv0.clear_errors()
+odrv0.axis1.requested_state = AXIS_STATE_MOTOR_CALIBRATION
+odrv0.axis1.motor.config.pre_calibrated = True
+odrv0.axis1.requested_state = AXIS_STATE_ENCODER_OFFSET_CALIBRATION
+odrv0.axis1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
