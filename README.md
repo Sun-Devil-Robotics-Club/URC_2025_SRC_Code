@@ -54,17 +54,17 @@ rosdep install --from-paths src --ignore-src -r -y
 pip install --upgrade odrive
 ```
 
+#### 2. Install MatplotLib
+
+```bash
+pip install matplotlib
+```
+
 ### 6. libusb
 
 ```bash
 sudo apt-get update
 sudo apt-get install libusb-1.0-0-dev
-```
-
-#### 2. Install MatplotLib
-
-```bash
-pip install matplotlib
 ```
 
 ## 🤝 How to Collaborate
