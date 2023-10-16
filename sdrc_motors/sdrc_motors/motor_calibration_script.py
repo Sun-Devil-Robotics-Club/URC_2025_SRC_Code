@@ -65,7 +65,7 @@ def autocal_stepper(odrv, odrv_ID):
     odrv.axis1.config.calibration_lockin.accel = 20
     odrv.axis1.config.calibration_lockin.vel = 40
     odrv.axis1.controller.config.pos_gain = 10.0 # Overshoot; increase for less
-    odrv.axis1.controller.config.vel_gain = 18.0 # Vibration Descress for less
+    odrv.axis1.controller.config.vel_gain = 36.0 # Vibration Descress for less
     odrv.axis0.controller.config.vel_integrator_gain = 0.5 * 0.33 * odrv.axis1.controller.config.vel_gain 
     odrv.axis1.controller.config.input_mode = 2 # Control MOde Velocity
     # odrv.axis1.controller.config.input_mode = 5  # "INPUT_MODE_TRAP_TRAJ"
@@ -100,10 +100,8 @@ def autocal_stepper(odrv, odrv_ID):
     countdown(15)
     odrv.axis1.requested_state = 8 # AXIS_STATE_CLOSED_LOOP_CONTROL
     countdown(5)
-    odrv.axis1.controller.input_vel = 20
-    countdown(20)
-
-    odrv = save_odrive(odrv, odrv_ID)
+    # odrv.axis1.controller.input_vel = 20
+    # countdown(20)
 
     dump_errors(odrv)
 
@@ -150,6 +148,8 @@ def autocal(odrv, odrv_ID):
 
     return odrv
 
+def find_odrive(odrv0_ID: str):
+    return odrive.find_any(serial_number=odrv0_ID)
 
 def main():
     print("starting autocalibration sequence")
@@ -158,10 +158,12 @@ def main():
     odrv0_ID = "207D349B5748"
 
     print("Searching For Odrives")
-    odrv0 = odrive.find_any(serial_number=odrv0_ID)
+    odrv0 = find_odrive(odrv0_ID)
 
     print("Found Odrive begginnig auto calibration sequence")
     odrv0 = autocal(odrv0, odrv0_ID)
+
+    odrv0 = save_odrive(odrv0, odrv_ID)
 
 
 if __name__ == "__main__":
