@@ -12,8 +12,6 @@
     <xacro:property name="wheel_offset_y" value="${base_width / 2.0 + wheel_length / 2.0}" />
     <xacro:property name="base_origin_z" value="${base_height / 2.0}" />
     
-    <xacro:property name="axle_eff_limit" value="5.12766"/>
-    <xacro:property name="axle_vel_limit" value="244.8696"/>
 
     <xacro:property name="chasis_weight_kgs" value="5" />
     <xacro:property name="wheel_weight_kgs" value="0.5" />

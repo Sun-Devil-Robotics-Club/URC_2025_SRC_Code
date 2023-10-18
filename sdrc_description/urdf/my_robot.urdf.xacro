@@ -9,7 +9,7 @@
 
    
 
-    <xacro:include filename="mesh_test_11.urdf.xacro" />
+    <xacro:include filename="robot_body.urdf.xacro" />
     <!-- <xacro:include filename="mobile_base_gazebo.xacro" /> -->
 
     <xacro:if value="$(arg use_ros2_control)">
