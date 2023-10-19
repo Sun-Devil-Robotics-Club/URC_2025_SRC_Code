@@ -67,6 +67,11 @@ sudo apt-get update
 sudo apt-get install libusb-1.0-0-dev
 ```
 
+### 7. Raspi GPS
+
+[Raspi Ultimate GPS Hat](https://learn.adafruit.com/adafruit-ultimate-gps-hat-for-raspberry-pi/pi-setup)
+
+
 ## 🤝 How to Collaborate
 
 ### 1. Setup Your ROS 2 Workspace
