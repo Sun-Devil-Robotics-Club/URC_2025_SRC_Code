@@ -3,9 +3,9 @@
 
     <xacro:arg name="use_ros2_control" default="true" />
 
-    <!-- <xacro:include filename="constants.xacro" />
+    <xacro:include filename="constants.xacro" />
     <xacro:include filename="common_properties.xacro" />
-    <xacro:include filename="mobile_base.xacro" /> -->
+    <!-- <xacro:include filename="mobile_base.xacro" />   -->
 
    
 
@@ -20,8 +20,8 @@
         <xacro:include filename="gazebo_control.xacro" />
     </xacro:unless>
     
-    <!-- <xacro:include filename="lidar.xacro" />
+    <!-- <xacro:include filename="lidar.xacro" /> -->
     <xacro:include filename="gps.xacro" />
-    <xacro:include filename="depth_camera.xacro" /> -->
+    <xacro:include filename="depth_camera.xacro" />
     
 </robot>
