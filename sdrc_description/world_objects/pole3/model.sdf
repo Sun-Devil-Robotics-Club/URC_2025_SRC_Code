@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="start_aruco">
+    <static>true</static>
+    <link name="link">
+      <collision name="surface">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+          <uri>model://pole3/meshes/pole3.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://pole3/meshes/pole3.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
