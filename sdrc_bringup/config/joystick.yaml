@@ -1,5 +1,5 @@
 # Extreme 3D PRO Joystick Config
-joy_node: 
+joy_node:
   ros__parameters:
     device_id: 0
     deadzone: 0.05
@@ -20,7 +20,6 @@ teleop_node:
       yaw: 1.0
     scale_angular_turbo:
       yaw: 2.5
-
 
     enable_button: 1
     enable_turbo_button: 0
