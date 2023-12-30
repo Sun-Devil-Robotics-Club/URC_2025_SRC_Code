@@ -85,22 +85,14 @@ Visualization Manager:
         odom:
           chassis:
             camera_link:
-              camera_link_optical:
-                {}
-            left_back_wheel_link:
-              {}
-            left_front_wheel_link:
-              {}
-            left_middle_wheel_link:
-              {}
-            lidar_frame:
-              {}
-            right_back_wheel_link:
-              {}
-            right_front_wheel_link:
-              {}
-            right_middle_wheel_link:
-              {}
+              camera_link_optical: {}
+            left_back_wheel_link: {}
+            left_front_wheel_link: {}
+            left_middle_wheel_link: {}
+            lidar_frame: {}
+            right_back_wheel_link: {}
+            right_front_wheel_link: {}
+            right_middle_wheel_link: {}
       Update Interval: 0
       Value: true
     - Alpha: 1
