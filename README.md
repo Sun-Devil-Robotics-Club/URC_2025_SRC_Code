@@ -71,6 +71,11 @@ sudo apt-get install libusb-1.0-0-dev
 
 [Raspi Ultimate GPS Hat](https://learn.adafruit.com/adafruit-ultimate-gps-hat-for-raspberry-pi/pi-setup)
 
+### 8. Ros Bridge Suite
+
+```bash
+sudo apt-get install ros-humble-rosbridge-suite
+```
 
 ## 🤝 How to Collaborate
 
