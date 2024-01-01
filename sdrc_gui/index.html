@@ -1,35 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8" />
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/eventemitter2@6.4.9/lib/eventemitter2.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
-
-<script type="text/javascript">
-    var ros = new ROSLIB.Ros({
-        url : 'ws://localhost:9090'
-    });
-
-    ros.on('connection', function() {
-        console.log('Connected to websocket server.');
-    });
-
-    var imageListener = new ROSLIB.Topic({
-        ros : ros,
-        name : '/camera/image_base64',
-        messageType : 'std_msgs/String'
-    });
-
-    imageListener.subscribe(function(message) {
-        var imageElement = document.getElementById('camera-image');
-        imageElement.src = 'data:image/jpeg;base64,' + message.data;
-    });
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HUD MockUp</title>
+  <link rel="stylesheet" href="styles.css"> 
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/eventemitter2@6.4.9/lib/eventemitter2.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+  <script src="script.js"></script>
 </head>
 
+
 <body>
-  <h1>SDRC 2025 GUI</h1>
-  <img id="camera-image" src="" alt="Camera Image" style="max-width:100%;">
+  <button onclick="onButtonClicked()" class="LED" id="LEDButton">
+    Change LED Status<br />
+    Current Status: Off
+  </button>
+
+  <img id="camera-image" src="" alt="Image of a a large sandy field with a drone in the shot" />
+
+  <p id="GNSS">Longitude: 10&#xb0<br>Latitude 15&#xb0<br>Speed: 0m/s</p>
+  <p id="Arm_Data">Arm Team Data</p>
 </body>
+
 </html>
