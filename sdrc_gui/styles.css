@@ -1,0 +1,41 @@
+#LEDButton {
+    grid-column-start: col-start;
+    grid-column-end: col1;
+    grid-row-start: row-start;
+    grid-row-end: row1;
+    width: 200px;
+    height: 100px;
+    float: left;
+    margin-right: 10px;
+    color: red
+}
+
+#camera-image {
+    grid-column-start: col1;
+    grid-column-end: col2;
+    grid-row-start: row-start;
+    grid-row-end: row1;
+    width: 100%;
+    height: auto;
+}
+
+#GNSS {
+    grid-column-start: col2;
+    grid-column-end: col3;
+    grid-row-start: row-start;
+    grid-row-end: row1;
+}
+
+body {
+    background-color: darkgray;
+    display: grid;
+    grid-template-columns: [col-start] 230px [col1] 1250px [col2] auto [col3];
+    grid-template-rows: [row-start] 25% [row1] 30% [row2] auto [row3];
+}
+
+#Arm_Data {
+    grid-column-start: col-start;
+    grid-column-end: col1;
+    grid-row-start: row1;
+    grid-row-end: row2;
+}
