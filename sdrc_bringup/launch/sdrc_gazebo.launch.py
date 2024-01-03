@@ -80,7 +80,7 @@ def generate_launch_description():
             ),
             DeclareLaunchArgument(
                 "use_ros2_control",
-                default_value="true",
+                default_value="false",
                 description="use ros2 control if true",
             ),
             robot_state_publisher_node,
