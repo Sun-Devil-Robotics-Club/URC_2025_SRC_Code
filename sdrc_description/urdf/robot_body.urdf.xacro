@@ -51,7 +51,7 @@
         xyz="0.015875 -0.13783 -0.047232"
         rpy="0 0 0" />
       <mass
-        value="0.48944" />
+        value="0.5" />
       <inertia
         ixx="0.0021898"
         ixy="-4.4494E-08"
@@ -88,7 +88,7 @@
     name="left_bogie_joint"
     type="fixed">
     <origin
-      xyz="-0.34589 0 -0.022225"
+      xyz="-0.35 0 -0.022"
       rpy="0 0 0" />
     <parent
       link="chassis" />
@@ -104,14 +104,14 @@
         xyz="0.000155212043927988 -2.36124552174255E-05 4.13306403687641E-05"
         rpy="0 0 0" />
       <mass
-        value="1.38515667925253" />
+        value="1.39" />
       <inertia
-        ixx="0.00608670649414915"
-        ixy="-1.51546150586869E-10"
-        ixz="5.01389386245008E-08"
-        iyy="0.00331734776435004"
-        iyz="1.79208088841883E-11"
-        izz="0.00331733123659271" />
+        ixx="0.001"
+        ixy="0.000"
+        ixz="0.000"
+        iyy="0.001"
+        iyz="0.000"
+        izz="0.001" />
     </inertial>
     <visual>
       <origin
@@ -135,13 +135,34 @@
         <mesh
           filename="package://sdrc_description/meshes/left_front_wheel_link.STL" />
       </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+            <fdir1>0 0 0</fdir1>
+            <slip1>0.0</slip1>
+            <slip2>0.0</slip2>
+          </ode>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+5</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <!-- <min_depth>0.001</min_depth> -->
+            </ode>
+          </contact>
+        </friction>
+      </surface>
     </collision>
   </link>
   <joint
     name="left_front_wheel_joint"
     type="continuous">
     <origin
-      xyz="-0.026131 -0.43501 -0.2454"
+      xyz="-0.026 -0.435 -0.245"
       rpy="0 0 0" />
     <parent
       link="left_bogie_link" />
@@ -157,7 +178,7 @@
         xyz="-4.20561563853061E-05 0.0320692844249238 -0.0458110093782014"
         rpy="0 0 0" />
       <mass
-        value="0.451855581637783" />
+        value="0.45" />
       <inertia
         ixx="0.000557359425591044"
         ixy="3.94579138177333E-08"
@@ -193,8 +214,10 @@
   <joint
     name="left_rocker_joint"
     type="fixed">
+    
+
     <origin
-      xyz="-0.0223501233974425 0.215899727447913 -0.0587375886680441"
+      xyz="-0.022 0.22 -0.059"
       rpy="0 0 0" />
     <parent
       link="left_bogie_link" />
@@ -210,14 +233,14 @@
         xyz="0.00011831 -5.6559E-06 -2.1325E-05"
         rpy="0 0 0" />
       <mass
-        value="1.3852" />
+        value="1.39" />
       <inertia
-        ixx="0.0060867"
-        ixy="-1.3047E-10"
-        ixz="5.0163E-08"
-        iyy="0.0033173"
-        iyz="5.842E-11"
-        izz="0.0033173" />
+        ixx="0.001"
+        ixy="0.000"
+        ixz="0.000"
+        iyy="0.001"
+        iyz="0.000"
+        izz="0.001" />
     </inertial>
     <visual>
       <origin
@@ -241,13 +264,34 @@
         <mesh
           filename="package://sdrc_description/meshes/left_rear_wheel_link.STL" />
       </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+            <fdir1>0 0 0</fdir1>
+            <slip1>0.0</slip1>
+            <slip2>0.0</slip2> 
+          </ode>
+        </friction>
+        <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+5</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <!-- <min_depth>0.001</min_depth> -->
+            </ode>
+          </contact>
+      </surface>
     </collision>
   </link>
   <joint
     name="left_rear_wheel_joint"
     type="continuous">
     <origin
-      xyz="-0.041844 0.21591 -0.18572"
+      xyz="-0.042 0.216 -0.193"
       rpy="0 0 0" />
     <parent
       link="left_rocker_link" />
@@ -263,14 +307,14 @@
         xyz="0.00011831 -6.0648E-06 -2.1149E-05"
         rpy="0 0 0" />
       <mass
-        value="1.3852" />
+        value="1.39" />
       <inertia
-        ixx="0.0060867"
-        ixy="3.7938E-08"
-        ixz="3.2773E-08"
-        iyy="0.0033173"
-        iyz="-8.2013E-09"
-        izz="0.0033173" />
+        ixx="0.001"
+        ixy="0.000"
+        ixz="0.000"
+        iyy="0.001"
+        iyz="0.000"
+        izz="0.001" />
     </inertial>
     <visual>
       <origin
@@ -294,13 +338,34 @@
         <mesh
           filename="package://sdrc_description/meshes/left_middle_wheel_link.STL" />
       </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+            <fdir1>0 0 0</fdir1>
+            <slip1>0.0</slip1>
+            <slip2>0.0</slip2> 
+          </ode>
+        </friction>
+        <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+5</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <!-- <min_depth>0.001</min_depth> -->
+            </ode>
+          </contact>
+      </surface>
     </collision>
   </link>
   <joint
     name="left_middle_wheel_joint"
     type="continuous">
     <origin
-      xyz="-0.041844 -0.21589 -0.18572"
+      xyz="-0.042 -0.22 -0.19"
       rpy="0 0 0" />
     <parent
       link="left_rocker_link" />
@@ -316,7 +381,7 @@
         xyz="0.015875 0.13783 -0.047232"
         rpy="0 0 0" />
       <mass
-        value="0.49894" />
+        value="0.5" />
       <inertia
         ixx="0.0021898"
         ixy="-4.4494E-08"
@@ -353,7 +418,7 @@
     name="right_bogie_joint"
     type="fixed">
     <origin
-      xyz="0.346075000000017 0 -0.0222249999792783"
+      xyz="0.35 0 -0.022"
       rpy="0 0 0" />
     <parent
       link="chassis" />
@@ -369,14 +434,14 @@
         xyz="4.20751756289306E-05 -0.0320692797825197 -0.0458110120936045"
         rpy="0 0 0" />
       <mass
-        value="0.451855561191559" />
+        value="0.45" />
       <inertia
-        ixx="0.000557359394151881"
-        ixy="-3.90638921000188E-08"
-        ixz="1.73581089366397E-07"
-        iyy="0.000207816780451024"
-        iyz="-1.29419748686903E-05"
-        izz="0.000444163205151771" />
+        ixx="0.000557359425591044"
+        ixy="3.94579138177333E-08"
+        ixz="-1.73611323725284E-07"
+        iyy="0.000207816779409454"
+        iyz="-1.29419652457806E-05"
+        izz="0.000444163243659817" />
     </inertial>
     <visual>
       <origin
@@ -406,7 +471,7 @@
     name="right_rocker_joint"
     type="fixed">
     <origin
-      xyz="0.022224999999983 0.215899999971175 -0.0587375000128591"
+      xyz="0.022 0.22 -0.059"
       rpy="0 0 0" />
     <parent
       link="right_bogie_link" />
@@ -422,14 +487,14 @@
         xyz="-0.000136764013834112 -4.17413270043845E-07 -3.58308653414241E-07"
         rpy="0 0 0" />
       <mass
-        value="1.38515667925641" />
+        value="1.39" />
       <inertia
-        ixx="0.00608670649415985"
-        ixy="-3.81060675117107E-08"
-        ixz="-3.26231551854187E-08"
-        iyy="0.00331733827450242"
-        iyz="-8.43766950773987E-09"
-        izz="0.00331734072645102" />
+        ixx="0.001"
+        ixy="0.000"
+        ixz="0.000"
+        iyy="0.001"
+        iyz="0.000"
+        izz="0.001" />
     </inertial>
     <visual>
       <origin
@@ -453,13 +518,34 @@
         <mesh
           filename="package://sdrc_description/meshes/right_middle_wheel_link.STL" />
       </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+            <fdir1>0 0 0</fdir1>
+            <slip1>0.0</slip1>
+            <slip2>0.0</slip2>   
+          </ode>
+        </friction>
+        <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+5</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <!-- <min_depth>0.001</min_depth> -->
+            </ode>
+          </contact>
+      </surface>
     </collision>
   </link>
   <joint
     name="right_middle_wheel_joint"
     type="continuous">
     <origin
-      xyz="0.041863 -0.2159 -0.18574"
+      xyz="0.042 -0.22 -0.19"
       rpy="0 0 0" />
     <parent
       link="right_rocker_link" />
@@ -475,14 +561,14 @@
         xyz="-0.000136764013806079 -3.97276728181239E-09 -5.47524751814965E-07"
         rpy="0 0 0" />
       <mass
-        value="1.38515667925022" />
+        value="1.39" />
       <inertia
-        ixx="0.00608670649414288"
-        ixy="-1.51613486823585E-10"
-        ixz="-5.0138297667682E-08"
-        iyy="0.00331734776436555"
-        iyz="-1.68192191724776E-11"
-        izz="0.00331733123657076" />
+        ixx="0.001"
+        ixy="0.000"
+        ixz="0.000"
+        iyy="0.001"
+        iyz="0.000"
+        izz="0.001" />
     </inertial>
     <visual>
       <origin
@@ -506,13 +592,34 @@
         <mesh
           filename="package://sdrc_description/meshes/right_rear_wheel_link.STL" />
       </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+            <fdir1>0 0 0</fdir1>
+            <slip1>0.0</slip1>
+            <slip2>0.0</slip2>   
+          </ode>
+        </friction>
+        <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+5</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <!-- <min_depth>0.001</min_depth> -->
+            </ode>
+          </contact>
+      </surface>
     </collision>
   </link>
   <joint
     name="right_rear_wheel_joint"
     type="continuous">
     <origin
-      xyz="0.041863 0.2159 -0.18574"
+      xyz="0.042 0.216 -0.193"
       rpy="0 0 0" />
     <parent
       link="right_rocker_link" />
@@ -528,14 +635,14 @@
         xyz="-0.000118164933657405 5.50144876632075E-06 -1.77910473420084E-06"
         rpy="0 0 0" />
       <mass
-        value="1.38515666192677" />
+        value="1.39" />
       <inertia
-        ixx="0.00608043301185015"
-        ixy="-0.000128488906642026"
-        ixz="2.8718884613149E-05"
-        iyy="0.00332332272916639"
-        iyz="-1.33545971335827E-06"
-        izz="0.00331762969863137" />
+        ixx="0.001"
+        ixy="0.000"
+        ixz="0.000"
+        iyy="0.001"
+        iyz="0.000"
+        izz="0.001" />
     </inertial>
     <visual>
       <origin
@@ -559,13 +666,34 @@
         <mesh
           filename="package://sdrc_description/meshes/right_front_wheel_link.STL" />
       </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>100000.0</mu>
+            <mu2>100000.0</mu2>
+            <fdir1>0 0 0</fdir1>
+            <slip1>0.0</slip1>
+            <slip2>0.0</slip2>  
+          </ode>
+        </friction>
+        <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+5</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <!-- <min_depth>0.001</min_depth> -->
+            </ode>
+          </contact>
+      </surface>
     </collision>
   </link>
   <joint
     name="right_front_wheel_joint"
     type="continuous">
     <origin
-      xyz="0.0259691526115853 -0.435038958244363 -0.245355896930363"
+      xyz="0.026 -0.435 -0.245"
       rpy="0 0 0" />
     <parent
       link="right_bogie_link" />
@@ -576,17 +704,17 @@
   </joint>
 
   <link name="base_link"></link>
-    <joint name="base_base_link" type="fixed">
-        <parent link="base_link"/>
-        <child link="chassis"/>
-        <origin xyz="0 0 0.35" rpy="0 0 0"/>
-    </joint>
+  <joint name="base_base_link" type="fixed">
+      <parent link="base_link"/>
+      <child link="chassis"/>
+      <origin xyz="0 0 0.35" rpy="0 0 ${pi / 2}"/>
+  </joint>
 
-    <joint name="base_footprint_joint" type="fixed">
-        <parent link="base_link"/>
-        <child link="base_footprint"/>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-    </joint>
+  <joint name="base_footprint_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="base_footprint"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
 
-    <link name="base_footprint"></link>
+  <link name="base_footprint"></link>
 </robot>
