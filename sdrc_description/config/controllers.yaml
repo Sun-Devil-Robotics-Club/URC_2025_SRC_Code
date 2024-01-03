@@ -16,13 +16,14 @@ diff_cont:
 
     base_frame_id: base_link
 
-    left_wheel_names: ['left_front_wheel_joint', 'left_middle_wheel_joint', 'left_rear_wheel_joint']
-    right_wheel_names: ['right_front_wheel_joint', 'right_middle_wheel_joint', 'right_rear_wheel_joint']
+    right_wheel_names: ['left_front_wheel_joint', 'left_middle_wheel_joint', 'left_rear_wheel_joint']
+    left_wheel_names: ['right_front_wheel_joint', 'right_middle_wheel_joint', 'right_rear_wheel_joint']
     wheel_separation: 0.762
     wheel_radius: 0.1
-    wheels_per_side: 1
+    wheels_per_side: 3
     use_stamped_vel: false
-
+    pose_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 0.03]
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 1000000.0, 1000000.0, 0.03]
     # open_loop: false    
 
     # wheels_per_side: x
@@ -30,11 +31,11 @@ diff_cont:
     # left_wheel_radius_multiplier: x
     # right_wheel_radius_multiplier: x
 
-    # odom_frame_id: x
+    odom_frame_id: '/odom'
     # pose_covariance_diagonal: x
     # twist_covariance_diagonal: x
     # open_loop: x
-    # enable_odom_tf: x
+    enable_odom_tf: true
 
     # cmd_vel_timeout: x
     # publish_limited_velocity: x
