@@ -4,7 +4,10 @@ from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
-from ament_index_python.packages import get_package_share_path
+from ament_index_python.packages import (
+    get_package_share_path,
+    get_package_share_directory,
+)
 
 
 def generate_launch_description():
@@ -38,6 +41,19 @@ def generate_launch_description():
                 "use_sim_time": use_sim_time,
             }
         ],
+    )
+
+    twist_mux_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            [
+                os.path.join(
+                    get_package_share_directory("sdrc_bringup"),
+                    "launch",
+                    "twist_mux.launch.py",
+                )
+            ]
+        ),
+        launch_arguments={"use_sim_time": "true"}.items(),
     )
 
     gazebo = IncludeLaunchDescription(
@@ -80,10 +96,11 @@ def generate_launch_description():
             ),
             DeclareLaunchArgument(
                 "use_ros2_control",
-                default_value="false",
+                default_value="true",
                 description="use ros2 control if true",
             ),
             robot_state_publisher_node,
+            twist_mux_node,
             gazebo,
             gazebo_ros_node,
             rviz2_node,
