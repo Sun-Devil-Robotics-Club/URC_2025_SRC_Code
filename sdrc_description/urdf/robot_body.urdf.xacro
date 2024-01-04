@@ -23,7 +23,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 ${pi / 2}" />
       <geometry>
         <mesh
           filename="package://sdrc_description/meshes/chassis.STL" />
@@ -37,7 +37,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 ${pi / 2}" />
       <geometry>
         <mesh
           filename="package://sdrc_description/meshes/chassis.STL" />
@@ -49,7 +49,7 @@
     <inertial>
       <origin
         xyz="0.015875 -0.13783 -0.047232"
-        rpy="0 0 0" />
+        rpy="0 0 ${pi / 2}" />
       <mass
         value="0.5" />
       <inertia
@@ -63,7 +63,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 ${pi / 2}" />
       <geometry>
         <mesh
           filename="package://sdrc_description/meshes/left_bogie_link.STL" />
@@ -77,7 +77,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 ${pi / 2}" />
       <geometry>
         <mesh
           filename="package://sdrc_description/meshes/left_bogie_link.STL" />
@@ -88,7 +88,7 @@
     name="left_bogie_joint"
     type="fixed">
     <origin
-      xyz="-0.35 0 -0.022"
+      xyz="0 -0.35 -0.022"
       rpy="0 0 0" />
     <parent
       link="chassis" />
@@ -162,8 +162,8 @@
     name="left_front_wheel_joint"
     type="continuous">
     <origin
-      xyz="-0.026 -0.435 -0.245"
-      rpy="0 0 0" />
+      xyz="0.435 -0.026 -0.245"
+      rpy="0 0 ${pi / 2}" />
     <parent
       link="left_bogie_link" />
     <child
@@ -215,8 +215,8 @@
     name="left_rocker_joint"
     type="fixed">
     <origin
-      xyz="-0.022 0.22 -0.059"
-      rpy="0 0 0" />
+      xyz="-0.22 -0.022 -0.059"
+      rpy="0 0 ${pi / 2}" />
     <parent
       link="left_bogie_link" />
     <child
@@ -377,7 +377,7 @@
     <inertial>
       <origin
         xyz="0.015875 0.13783 -0.047232"
-        rpy="0 0 0" />
+        rpy="0 0 ${pi / 2}" />
       <mass
         value="0.5" />
       <inertia
@@ -391,7 +391,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 ${pi / 2}" />
       <geometry>
         <mesh
           filename="package://sdrc_description/meshes/right_bogie_link.STL" />
@@ -405,7 +405,7 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 ${pi / 2}" />
       <geometry>
         <mesh
           filename="package://sdrc_description/meshes/right_bogie_link.STL" />
@@ -416,7 +416,7 @@
     name="right_bogie_joint"
     type="fixed">
     <origin
-      xyz="0.35 0 -0.022"
+      xyz="0 0.35 -0.022"
       rpy="0 0 0" />
     <parent
       link="chassis" />
@@ -469,8 +469,8 @@
     name="right_rocker_joint"
     type="fixed">
     <origin
-      xyz="0.022 0.22 -0.059"
-      rpy="0 0 0" />
+      xyz="-0.22 0.022 -0.059"
+      rpy="0 0 ${pi / 2}" />
     <parent
       link="right_bogie_link" />
     <child
@@ -691,8 +691,8 @@
     name="right_front_wheel_joint"
     type="continuous">
     <origin
-      xyz="0.026 -0.435 -0.245"
-      rpy="0 0 0" />
+      xyz="0.435 0.026 -0.245"
+      rpy="0 0 ${pi / 2}" />
     <parent
       link="right_bogie_link" />
     <child
@@ -705,14 +705,6 @@
   <joint name="base_base_link" type="fixed">
       <parent link="base_link"/>
       <child link="chassis"/>
-      <origin xyz="0 0 0.35" rpy="0 0 ${pi / 2}"/>
+      <origin xyz="0 0 0.35" rpy="0 0 0"/>
   </joint>
-
-  <joint name="base_footprint_joint" type="fixed">
-      <parent link="base_link"/>
-      <child link="base_footprint"/>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint>
-
-  <link name="base_footprint"></link>
 </robot>
