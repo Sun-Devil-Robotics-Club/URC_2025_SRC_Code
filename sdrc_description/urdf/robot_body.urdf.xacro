@@ -214,8 +214,6 @@
   <joint
     name="left_rocker_joint"
     type="fixed">
-    
-
     <origin
       xyz="-0.022 0.22 -0.059"
       rpy="0 0 0" />
