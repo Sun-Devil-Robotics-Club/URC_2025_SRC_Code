@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'decoder_node = sdrc_utils.decoder_node:main',
+            'gps_follower_node = sdrc_utils.gps_follower_node:main'
         ],
     },
 )
