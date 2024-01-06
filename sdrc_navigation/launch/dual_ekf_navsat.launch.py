@@ -1,6 +1,7 @@
 from launch import LaunchDescription
 from ament_index_python.packages import get_package_share_directory
-from launch.actions import IncludeLaunchDescription
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 import launch_ros.actions
 import os
@@ -10,6 +11,7 @@ import launch.actions
 def generate_launch_description():
     nav_dir = get_package_share_directory("sdrc_navigation")
     rl_params_file = os.path.join(nav_dir, "config", "dual_ekf_navsat_params.yaml")
+    use_sim_time = LaunchConfiguration("use_sim_time")
 
     # This EKF is responsible for taking local data and providing odom -> base link transform
     # Answers how is robot oriented and moving
@@ -18,7 +20,7 @@ def generate_launch_description():
         executable="ekf_node",
         name="ekf_filter_node_odom",
         output="screen",
-        parameters=[rl_params_file, {"use_sim_time": True}],
+        parameters=[rl_params_file, {"use_sim_time": use_sim_time}],
         remappings=[("odometry/filtered", "odometry/local")],
     )
 
@@ -29,7 +31,7 @@ def generate_launch_description():
         executable="ekf_node",
         name="ekf_filter_node_map",
         output="screen",
-        parameters=[rl_params_file, {"use_sim_time": True}],
+        parameters=[rl_params_file, {"use_sim_time": use_sim_time}],
         remappings=[("odometry/filtered", "odometry/global")],
     )
 
@@ -39,7 +41,7 @@ def generate_launch_description():
         executable="navsat_transform_node",
         name="navsat_transform",
         output="screen",
-        parameters=[rl_params_file, {"use_sim_time": True}],
+        parameters=[rl_params_file, {"use_sim_time": use_sim_time}],
         remappings=[
             ("imu/data", "imu/data"),
             ("gps/fix", "gps/data"),
@@ -51,6 +53,11 @@ def generate_launch_description():
 
     return LaunchDescription(
         [
+            DeclareLaunchArgument(
+                "use_sim_time",
+                default_value="true",
+                description="uses simulation time if true",
+            ),
             ekf_local_node,
             navsat_node,
             ekf_global_node,

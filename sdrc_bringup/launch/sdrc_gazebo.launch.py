@@ -20,6 +20,15 @@ def generate_launch_description():
     gazebo_ros_launch_path = os.path.join(
         get_package_share_path("gazebo_ros"), "launch", "gazebo.launch.py"
     )
+    robot_localization_launch_path = os.path.join(
+        get_package_share_path("sdrc_navigation"), "launch", "dual_ekf_navsat.launch.py"
+    )
+    mapviz_launch_path = os.path.join(
+        get_package_share_path("sdrc_navigation"), "launch", "mapviz.launch.py"
+    )
+    navigation_launch_path = os.path.join(
+        get_package_share_path("sdrc_navigation"), "launch", "navigation.launch.py"
+    )
     rviz_config_path = os.path.join(
         get_package_share_path("sdrc_bringup"), "rviz", "urdf_config.rviz"
     )
@@ -29,7 +38,7 @@ def generate_launch_description():
     gazebo_params_file = os.path.join(
         get_package_share_path("sdrc_bringup"), "config", "gazebo_params.yaml"
     )
-
+    
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
@@ -63,7 +72,21 @@ def generate_launch_description():
             "extra_gazebo_args": "--ros-args --params-file " + gazebo_params_file,
         }.items(),
     )
+    
+    robot_localization = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(robot_localization_launch_path),
+        launch_arguments={
+            "use_sim_time": use_sim_time,
+        }.items(),
+    )
 
+    mapviz_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(mapviz_launch_path)
+    )
+    
+    navigation_node = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(navigation_launch_path)
+    )
     gazebo_ros_node = Node(
         package="gazebo_ros",
         executable="spawn_entity.py",
@@ -106,5 +129,8 @@ def generate_launch_description():
             rviz2_node,
             diff_drive_spawner,
             joint_broad_spawner,
+            robot_localization,
+            navigation_node,
+            mapviz_node,
         ]
     )
