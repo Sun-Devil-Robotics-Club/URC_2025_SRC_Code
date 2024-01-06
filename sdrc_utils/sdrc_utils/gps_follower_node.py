@@ -11,9 +11,6 @@ from geometry_msgs.msg import Quaternion
 
 
 def quaternion_from_euler(roll, pitch, yaw):
-    """
-    Converts euler roll, pitch, yaw to quaternion
-    """
     cy = math.cos(yaw * 0.5)
     sy = math.sin(yaw * 0.5)
     cp = math.cos(pitch * 0.5)
