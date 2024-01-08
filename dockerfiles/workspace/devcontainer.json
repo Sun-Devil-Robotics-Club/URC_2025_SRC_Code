@@ -1,5 +1,5 @@
 {
-  "name": "humble desktop",
+  "name": "URC 2025 humble desktop",
   "dockerFile": "Dockerfile",
   "runArgs": [
     "--privileged",
