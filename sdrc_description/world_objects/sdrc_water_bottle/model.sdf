@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="sdrc_water_bottle">
+    <static>true</static>
+    <link name="link">
+      <visual name="bottle_visual">
+        <geometry>
+          <mesh>
+            <uri>model://sdrc_water_bottle/meshes/sdrc_water_bottle.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <collision name="bottle_collision">
+        <geometry>
+          <mesh>
+            <uri>model://sdrc_water_bottle/meshes/sdrc_water_bottle.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

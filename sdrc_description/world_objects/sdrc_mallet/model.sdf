@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="sdrc_mallet">
+    <static>true</static>
+    <link name="link">
+      <visual name="mallet_visual">
+        <geometry>
+          <mesh>
+            <uri>model://sdrc_mallet/meshes/sdrc_mallet.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Orange</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="mallet_collision">
+        <geometry>
+          <mesh>
+            <uri>model://sdrc_mallet/meshes/sdrc_mallet.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

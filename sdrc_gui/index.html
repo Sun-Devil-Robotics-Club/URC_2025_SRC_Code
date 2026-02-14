@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,6 +12,47 @@
   <script src="script.js"></script>
 </head>
 
+<body>
+  <h1>Rover Dashboard</h1>
+
+  <!-- LED Toggle Button (existing) -->
+  <button id="LEDButton" class="LED">
+    Change LED Status<br>
+    Current Status: Off
+  </button>
+
+  <!-- Teleop Controls -->
+  <div id="teleop-controls">
+    <h2>Teleop Commands</h2>
+    <button onclick="sendVelocity(0.2, 0)">Forward</button>
+    <button onclick="sendVelocity(-0.2, 0)">Reverse</button>
+    <button onclick="sendVelocity(0, 0.5)">Turn Left</button>
+    <button onclick="sendVelocity(0, -0.5)">Turn Right</button>
+    <button onclick="sendVelocity(0, 0)">Stop</button>
+  </div>
+
+  <!-- Camera Feed (existing) -->
+  <img id="camera-image" src="" alt="Rover Camera Feed" />
+
+  <!-- Waypoint / GNSS Input -->
+  <div id="waypoint-form">
+    <h2>Send Waypoint</h2>
+    <label for="latInput">Latitude:</label>
+    <input type="text" id="latInput" placeholder="e.g. 35.000">
+    <label for="lonInput">Longitude:</label>
+    <input type="text" id="lonInput" placeholder="e.g. -120.000">
+    <button onclick="sendWaypoint()">Send Waypoint</button>
+  </div>
+
+  <!-- Real-time Status Display -->
+  <div id="status-panel">
+    <h2>Rover Status</h2>
+    <p>Battery Voltage: <span id="batteryVal">N/A</span></p>
+    <p id="GNSS">Longitude: 10°<br>Latitude: 15°<br>Speed: 0 m/s</p>
+    <p id="Arm_Data">Arm Team Data</p>
+  </div>
+</body>
+</html>
 
 <body>
   <button onclick="onButtonClicked()" class="LED" id="LEDButton">

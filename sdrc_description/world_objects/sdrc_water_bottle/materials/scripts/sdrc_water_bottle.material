@@ -1,0 +1,16 @@
+material SDRC/WaterBottle
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+      scene_blend alpha_blend  # keep the plastic look if your mesh has transparency
+      texture_unit
+      {
+        texture 500mL-spring-water.png
+        filtering trilinear
+      }
+    }
+  }
+}

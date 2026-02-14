@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="mars_terrain">
+    <static>true</static>
+
+    <link name="link">
+
+      <!-- Collision: start with mesh; swap to a simple box/heightmap later if perf is an issue -->
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://mars_terrain/meshes/mars_terrain.dae</uri>
+            <!-- Optional: <scale>1 1 1</scale> -->
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://mars_terrain/meshes/mars_terrain.dae</uri>
+            <!-- Optional: <scale>1 1 1</scale> -->
+          </mesh>
+        </geometry>
+
+        <!-- Point to BOTH the script folder and the textures folder -->
+        <material>
+          <script>
+            <uri>model://mars_terrain/materials/scripts</uri>
+            <uri>model://mars_terrain/materials/textures</uri>
+            <name>MarsTerrain/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

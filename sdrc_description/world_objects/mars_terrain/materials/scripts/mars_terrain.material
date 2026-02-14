@@ -1,0 +1,18 @@
+material MarsTerrain/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+
+      texture_unit
+      {
+        texture RockyGround.png
+        filtering trilinear
+        # Optional: tweak scaling if your UVs need more/less tiling
+        # scale 1.0 1.0
+      }
+    }
+  }
+}
